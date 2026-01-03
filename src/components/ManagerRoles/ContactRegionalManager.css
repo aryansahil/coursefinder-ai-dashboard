@@ -1,0 +1,84 @@
+.crm-wrapper {
+  width: 100%;
+}
+
+/* TITLE */
+.crm-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+/* CARD */
+.crm-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #eef0f4;
+  overflow: hidden;
+}
+
+/* ITEM */
+.crm-item {
+  padding: 14px;
+}
+
+/* DIVIDER */
+.crm-item.with-divider {
+  border-bottom: 1px solid #eef0f4;
+}
+
+/* TOP ROW */
+.crm-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* AVATAR */
+.crm-top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* INFO */
+.crm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* NAME */
+.crm-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* META */
+.crm-meta {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sep {
+  margin: 0 4px;
+}
+
+/* EMAIL */
+.crm-email {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #374151;
+  padding-left: 52px; /* aligns under text, not avatar */
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .crm-wrapper {
+    margin-top: 16px;
+  }
+}

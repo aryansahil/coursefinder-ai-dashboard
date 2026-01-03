@@ -1,0 +1,61 @@
+.allied-banner-wrapper img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+/* DOTS */
+.allied-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c7d2fe;
+}
+
+.dot.active {
+  background: #1d4ed8;
+}
+
+@media (min-width: 1024px) {
+  .allied-banner-wrapper {
+    max-width: 100%;
+  }
+
+  .allied-banner-wrapper img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .allied-banner-wrapper {
+    margin-top: 20px;
+  }
+
+  .allied-dots {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .allied-banner-wrapper {
+    margin-top: 16px;
+  }
+
+  .allied-dots {
+    margin-top: 6px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+}

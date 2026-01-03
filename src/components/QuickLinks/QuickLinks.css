@@ -1,0 +1,54 @@
+.quick-links {
+  width: 100%;
+}
+
+/* TITLE */
+.quick-links-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+/* LIST */
+.quick-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ITEM */
+.quick-link-item {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 1px solid #eef0f4;
+}
+
+/* TEXT */
+.link-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2563eb; /* exact link blue */
+}
+
+/* ICON */
+.link-icon {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* HOVER (very subtle, matches dashboard feel) */
+.quick-link-item:hover {
+  background: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  .quick-links {
+    margin-top: 16px;
+  }
+}

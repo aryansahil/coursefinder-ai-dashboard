@@ -1,0 +1,109 @@
+.filters-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eef0f4;
+  padding: 16px;
+  width: 100%;
+  margin: 0;
+}
+
+/* ROW */
+.filters-row {
+  display: flex;
+  gap: 16px;
+}
+
+.filters-row + .filters-row {
+  margin-top: 12px;
+}
+
+/* INPUT */
+.filter-input {
+  flex: 1;
+  height: 44px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.filter-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #374151;
+}
+
+.filter-wrapper {
+  position: relative;
+  flex: 1;
+  padding-bottom: 16px; /* 👈 reserve space for error */
+}
+
+/* input stays fixed height */
+.filter-input {
+  height: 44px;
+}
+
+/* error text sits in reserved space */
+.error-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 11px;
+  color: #ef4444;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* error border */
+.filter-input.error {
+  border-color: #ef4444;
+}
+
+
+.filter-input input::placeholder {
+  color: #9ca3af;
+}
+
+/* ICONS */
+.left-icon,
+.right-icon {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.left-icon {
+  margin-right: 8px;
+}
+
+.right-icon {
+  margin-left: 8px;
+}
+
+/* BUTTON */
+.apply-btn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #ffffff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.apply-btn:hover {
+  background: #f0f6ff;
+}
+
+@media (max-width: 768px) {
+  .filters-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,179 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ================= HEADER (FIXED) ================= */
+/* 🔴 USE YOUR REAL HEADER CLASS HERE */
+.cf-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 1000;
+}
+
+/* ================= SIDEBAR (FIXED) ================= */
+/* 🔴 USE YOUR REAL SIDEBAR CLASS HERE */
+.cf-sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 64px);
+  z-index: 900;
+  background: #ffffff;
+}
+
+.dashboard-root {
+  min-height: 100vh;
+  background: #f6f8fb;
+}
+
+.dashboard-body {
+  display: flex;
+  padding-top: 64px;
+}
+
+/* main area excluding sidebar */
+.dashboard-content {
+  margin-left: 240px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 20px 24px;
+  flex: 1;
+  background: #f6f8fb;
+}
+
+/* TWO COLUMN LAYOUT */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* LEFT COLUMN */
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0; /* 👈 prevents overflow squeezing */
+}
+
+/* RIGHT COLUMN */
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 320px;       /* 👈 explicit */
+  flex-shrink: 0;     /* 👈 prevent squeezing */
+}
+
+/* greeting */
+.dashboard-greeting {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dashboard-greeting span {
+  font-weight: 600;
+}
+
+/* right column action buttons */
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* buttons */
+.btn-outline {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #2f6fed;
+  background: #fff;
+  color: #2f6fed;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2f6fed;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 1279px) {
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .dashboard-layout {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* hide fixed sidebar */
+  .cf-sidebar {
+    display: none;
+  }
+
+  /* content fills screen */
+  .dashboard-content {
+    margin-left: 0;
+    height: calc(100vh - 64px);
+  }
+
+  /* stack layout */
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-right {
+    width: 100%;
+    order: 1;
+  }
+
+  .dashboard-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-content {
+    padding: 12px;
+  }
+
+  .dashboard-greeting {
+    font-size: 14px;
+  }
+
+  .dashboard-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    width: 100%;
+  }
+}
+

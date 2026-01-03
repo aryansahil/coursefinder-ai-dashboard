@@ -1,0 +1,123 @@
+.stats-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+/* CARD BASE */
+.stat-card {
+  flex: 1;
+  height: 140px; /* figma height */
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+}
+
+/* TOP CONTENT */
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* VALUE */
+.stat-value {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* LABEL */
+.stat-label {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* ACTION BUTTON */
+.stat-action {
+  margin-top: auto; /* 🔥 pins button to bottom */
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  top: 125px;
+}
+
+/* ===== COLOR THEMES ===== */
+
+/* BLUE */
+.stat-card.blue {
+  background: #d4e3ff;
+}
+.stat-card.blue .stat-value {
+  color: #226cf5;
+}
+.stat-card.blue .stat-action {
+  color: #226cf5;
+  border-color: #9cbdfb;
+}
+
+/* GREEN */
+.stat-card.green {
+  background: #ebffef;
+}
+.stat-card.green .stat-value {
+  color: #41a155;
+}
+.stat-card.green .stat-action {
+  color: #41a155;
+  border-color: #b3edc0;
+}
+
+/* YELLOW */
+.stat-card.yellow {
+  background: #fff6db;
+}
+.stat-card.yellow .stat-value {
+  color: #ebb925;
+}
+.stat-card.yellow .stat-action {
+  color: #ebb925;
+  border-color: #fee598;
+}
+
+/* RED */
+.stat-card.red {
+  background: #fff0f2;
+}
+.stat-card.red .stat-value {
+  color: #ff2e42;
+}
+.stat-card.red .stat-action {
+  color: #ff2e42;
+  border-color: #fdced5;
+}
+
+/* GRAY */
+.stat-card.gray {
+  background: #eeeeee;
+}
+.stat-card.gray .stat-value {
+  color: #616262;
+}
+.stat-card.gray .stat-action {
+  color: #616262;
+  border-color: #d2d2d2;
+}
+
+@media (max-width: 767px) {
+  .stats-row {
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    min-width: 100%;
+  }
+}
+

@@ -1,0 +1,86 @@
+.news-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+/* TITLE */
+.news-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+/* CONTENT ROW */
+.news-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* ICON CIRCLE */
+.news-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #93939366;
+  background: #f1f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.news-icon svg {
+  font-size: 18px;
+  color: #2b6ff3;
+}
+
+/* TEXT */
+.news-text h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #111827;
+}
+
+.news-text p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b7280;
+  margin: 0;
+}
+
+.read-more {
+  color: #2b6ff3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* DOTS */
+.news-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+
+.dot.active {
+  background: #111827;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    margin-top: 16px;
+  }
+}
