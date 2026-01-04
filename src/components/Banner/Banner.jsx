@@ -5,8 +5,6 @@ export default function Banner() {
   return (
     <div className="allied-banner-wrapper">
       <img src={BannerImage} alt="student" />
-
-      {/* DOTS */}
       <div className="allied-dots">
         <span className="dot" />
         <span className="dot active" />

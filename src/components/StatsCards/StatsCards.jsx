@@ -13,13 +13,11 @@ export default function StatsCards() {
     <div className="stats-row">
       {stats.map((item, index) => (
         <div className={`stat-card ${item.theme}`} key={index}>
-          {/* TOP CONTENT */}
           <div className="stat-content">
             <div className="stat-value">{item.value}</div>
             <div className="stat-label">{item.label}</div>
           </div>
 
-          {/* BOTTOM ACTION */}
           <button className="stat-action">{item.action}</button>
         </div>
       ))}

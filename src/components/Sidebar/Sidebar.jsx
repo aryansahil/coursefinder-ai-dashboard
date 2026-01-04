@@ -13,9 +13,9 @@ import Info from "../../assets/icons/info.svg";
 import Links from "../../assets/icons/links.svg";
 import Feedback from "../../assets/icons/feedback.svg";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen }) {
   return (
-    <aside className="cf-sidebar">
+    <aside className={`cf-sidebar ${isOpen ? "open" : ""}`}>
       <nav className="cf-sidebar-menu">
         <SidebarItem to="/" icon={Home} label="Dashboard" />
         <SidebarItem to="/students" icon={Student} label="Students" />

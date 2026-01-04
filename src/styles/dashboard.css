@@ -8,8 +8,6 @@ body {
   overflow: hidden;
 }
 
-/* ================= HEADER (FIXED) ================= */
-/* 🔴 USE YOUR REAL HEADER CLASS HERE */
 .cf-header {
   position: fixed;
   top: 0;
@@ -17,18 +15,6 @@ body {
   right: 0;
   height: 64px;
   z-index: 1000;
-}
-
-/* ================= SIDEBAR (FIXED) ================= */
-/* 🔴 USE YOUR REAL SIDEBAR CLASS HERE */
-.cf-sidebar {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  width: 240px;
-  height: calc(100vh - 64px);
-  z-index: 900;
-  background: #ffffff;
 }
 
 .dashboard-root {
@@ -41,9 +27,8 @@ body {
   padding-top: 64px;
 }
 
-/* main area excluding sidebar */
 .dashboard-content {
-  margin-left: 240px;
+  margin-left: 260px;
   height: calc(100vh - 64px);
   overflow-y: auto;
   padding: 20px 24px;
@@ -51,7 +36,6 @@ body {
   background: #f6f8fb;
 }
 
-/* TWO COLUMN LAYOUT */
 .dashboard-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
@@ -60,24 +44,21 @@ body {
   margin: 0 auto;
 }
 
-/* LEFT COLUMN */
 .dashboard-left {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 0; /* 👈 prevents overflow squeezing */
+  min-width: 0;
 }
 
-/* RIGHT COLUMN */
 .dashboard-right {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 320px;       /* 👈 explicit */
-  flex-shrink: 0;     /* 👈 prevent squeezing */
+  width: 320px;
+  flex-shrink: 0;
 }
 
-/* greeting */
 .dashboard-greeting {
   font-size: 18px;
   font-weight: 500;
@@ -87,14 +68,12 @@ body {
   font-weight: 600;
 }
 
-/* right column action buttons */
 .dashboard-actions {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
 
-/* buttons */
 .btn-outline {
   height: 36px;
   padding: 0 14px;
@@ -119,7 +98,22 @@ body {
   cursor: pointer;
 }
 
-/* responsive */
+.sidebar-overlay {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+}
+
+@media (min-width: 1025px) {
+  .sidebar-overlay {
+    display: none;
+  }
+}
+
 @media (max-width: 1279px) {
   .dashboard-content {
     padding: 16px;
@@ -131,18 +125,10 @@ body {
 }
 
 @media (max-width: 1024px) {
-  /* hide fixed sidebar */
-  .cf-sidebar {
-    display: none;
-  }
-
-  /* content fills screen */
   .dashboard-content {
     margin-left: 0;
-    height: calc(100vh - 64px);
   }
 
-  /* stack layout */
   .dashboard-layout {
     grid-template-columns: 1fr;
   }
@@ -176,4 +162,3 @@ body {
     width: 100%;
   }
 }
-

@@ -1,14 +1,12 @@
-/* HEADER CONTAINER */
 .cf-header {
   height: 64px;
-  background: #2b6ff3; /* exact figma-like blue */
+  background: #2b6ff3;
   display: flex;
   align-items: center;
   padding: 0 24px;
   color: #fff;
 }
 
-/* LEFT */
 .cf-header-left {
   display: flex;
   align-items: center;
@@ -21,7 +19,6 @@
   letter-spacing: 0.2px;
 }
 
-/* CENTER SEARCH */
 .cf-header-center {
   position: relative;
   margin-left: 95px;
@@ -52,7 +49,6 @@
   font-size: 16px;
 }
 
-/* RIGHT SECTION */
 .cf-header-right {
   display: flex;
   align-items: center;
@@ -60,7 +56,6 @@
   margin-left: auto;
 }
 
-/* WHATS NEW */
 .whats-new {
   display: flex;
   align-items: center;
@@ -69,7 +64,6 @@
   cursor: pointer;
 }
 
-/* NOTIFICATION */
 .notification {
   position: relative;
   font-size: 18px;
@@ -91,7 +85,6 @@
   justify-content: center;
 }
 
-/* USER */
 .user {
   display: flex;
   align-items: center;
@@ -111,22 +104,32 @@
   font-weight: 500;
 }
 
-/* ===== RESPONSIVE BEHAVIOR ===== */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 12px;
+}
 
-/* Tablets */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+}
+
 @media (max-width: 1024px) {
   .username {
     display: none;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .cf-header {
     padding: 0 16px;
   }
 
-  /* Hide search completely */
   .cf-header-center {
     display: none;
   }
@@ -136,9 +139,7 @@
   }
 }
 
-/* Small mobile */
 @media (max-width: 480px) {
-  /* Hide text, keep icon */
   .whats-new span {
     display: none;
   }

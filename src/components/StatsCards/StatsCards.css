@@ -4,10 +4,9 @@
   width: 100%;
 }
 
-/* CARD BASE */
 .stat-card {
   flex: 1;
-  height: 140px; /* figma height */
+  height: 140px;
   border-radius: 12px;
   padding: 16px;
   display: flex;
@@ -17,28 +16,24 @@
   min-width: 0;
 }
 
-/* TOP CONTENT */
 .stat-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* VALUE */
 .stat-value {
   font-size: 28px;
   font-weight: 600;
 }
 
-/* LABEL */
 .stat-label {
   font-size: 13px;
   color: #374151;
 }
 
-/* ACTION BUTTON */
 .stat-action {
-  margin-top: auto; /* 🔥 pins button to bottom */
+  margin-top: auto;
   font-size: 12px;
   padding: 4px 10px;
   border-radius: 6px;
@@ -49,9 +44,6 @@
   top: 125px;
 }
 
-/* ===== COLOR THEMES ===== */
-
-/* BLUE */
 .stat-card.blue {
   background: #d4e3ff;
 }
@@ -63,7 +55,6 @@
   border-color: #9cbdfb;
 }
 
-/* GREEN */
 .stat-card.green {
   background: #ebffef;
 }
@@ -75,7 +66,6 @@
   border-color: #b3edc0;
 }
 
-/* YELLOW */
 .stat-card.yellow {
   background: #fff6db;
 }
@@ -87,7 +77,6 @@
   border-color: #fee598;
 }
 
-/* RED */
 .stat-card.red {
   background: #fff0f2;
 }
@@ -99,7 +88,6 @@
   border-color: #fdced5;
 }
 
-/* GRAY */
 .stat-card.gray {
   background: #eeeeee;
 }

@@ -1,27 +1,27 @@
 import "./Header.css";
-import { BsSearch, BsBell, BsChevronDown } from "react-icons/bs";
-import { HiSpeakerphone } from "react-icons/hi";
+import { BsChevronDown } from "react-icons/bs";
 import Searchbar from "../../assets/icons/searchbar.svg";
 import Notification from "../../assets/icons/notification.svg";
 import Announcement from "../../assets/icons/announcement.svg";
+import { FiMenu } from "react-icons/fi";
 
-export default function Header() {
+export default function Header({ onMenuClick }) {
   return (
     <header className="cf-header">
-      {/* LEFT */}
       <div className="cf-header-left">
+        <button className="hamburger" onClick={onMenuClick}>
+          <FiMenu size={22} />
+        </button>
         <span className="cf-logo" onClick={() => (window.location.href = "/")}>
           coursefinder.ai
         </span>
       </div>
 
-      {/* CENTER */}
       <div className="cf-header-center">
         <img src={Searchbar} alt="search-icon" className="search-icon" />
         <input type="text" placeholder="Search by student name, ack no." />
       </div>
 
-      {/* RIGHT */}
       <div className="cf-header-right">
         <div className="whats-new">
           <img src={Announcement} alt="Announcement" />

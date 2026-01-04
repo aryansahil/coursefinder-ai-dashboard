@@ -7,7 +7,6 @@
   margin: 0;
 }
 
-/* ROW */
 .filters-row {
   display: flex;
   gap: 16px;
@@ -17,7 +16,6 @@
   margin-top: 12px;
 }
 
-/* INPUT */
 .filter-input {
   flex: 1;
   height: 44px;
@@ -40,15 +38,13 @@
 .filter-wrapper {
   position: relative;
   flex: 1;
-  padding-bottom: 16px; /* 👈 reserve space for error */
+  padding-bottom: 16px;
 }
 
-/* input stays fixed height */
 .filter-input {
   height: 44px;
 }
 
-/* error text sits in reserved space */
 .error-text {
   position: absolute;
   bottom: 0;
@@ -59,7 +55,6 @@
   white-space: nowrap;
 }
 
-/* error border */
 .filter-input.error {
   border-color: #ef4444;
 }
@@ -69,7 +64,6 @@
   color: #9ca3af;
 }
 
-/* ICONS */
 .left-icon,
 .right-icon {
   color: #9ca3af;
@@ -84,7 +78,6 @@
   margin-left: 8px;
 }
 
-/* BUTTON */
 .apply-btn {
   height: 44px;
   padding: 0 20px;

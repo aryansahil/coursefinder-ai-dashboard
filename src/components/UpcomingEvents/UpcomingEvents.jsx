@@ -59,7 +59,6 @@ export default function UpcomingEvents() {
 
   return (
     <div className="event-card">
-      {/* HEADER */}
       <div className="event-header">
         <h6>Upcoming Events</h6>
 
@@ -74,12 +73,10 @@ export default function UpcomingEvents() {
         </div>
       </div>
 
-      {/* IMAGE */}
       <div className="event-image">
         <img src={activeEvent.image} alt="event" />
       </div>
 
-      {/* CONTENT */}
       <div className="event-body">
         <h5>{activeEvent.title}</h5>
 

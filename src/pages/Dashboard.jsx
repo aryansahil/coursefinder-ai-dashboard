@@ -10,19 +10,27 @@ import QuickLinks from "../components/QuickLinks/QuickLinks";
 import ContactRegionalManager from "../components/ManagerRoles/ContactRegionalManager";
 
 import "../styles/dashboard.css";
+import { useState } from "react";
 
 export default function Dashboard() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="dashboard-root">
-      <Header />
+      <Header onMenuClick={() => setIsSidebarOpen((prev) => !prev)} />
+
+      {isSidebarOpen && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
 
       <div className="dashboard-body">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} />
 
         <main className="dashboard-content">
-          {/* LEFT + RIGHT COLUMNS */}
           <div className="dashboard-layout">
-            {/* LEFT / MIDDLE SECTION */}
             <section className="dashboard-left">
               <h5 className="dashboard-greeting">
                 Hey, Good Morning <span className="fw-bolder">Sahil!</span>
@@ -34,10 +42,14 @@ export default function Dashboard() {
               <Banner />
             </section>
 
-            {/* RIGHT SECTION */}
             <aside className="dashboard-right">
               <div className="dashboard-actions">
-                <button className="btn-outline" onClick={() => window.location.reload()}>Refresh Dashboard</button>
+                <button
+                  className="btn-outline"
+                  onClick={() => window.location.reload()}
+                >
+                  Refresh Dashboard
+                </button>
                 <button className="btn-primary">Register Student</button>
               </div>
               <NewsBulletin />

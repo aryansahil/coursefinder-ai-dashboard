@@ -6,7 +6,6 @@
   width: 100%;
 }
 
-/* TITLE */
 .news-title {
   font-size: 14px;
   font-weight: 600;
@@ -14,14 +13,12 @@
   margin-bottom: 12px;
 }
 
-/* CONTENT ROW */
 .news-content {
   display: flex;
   gap: 12px;
   align-items: flex-start;
 }
 
-/* ICON CIRCLE */
 .news-icon {
   width: 40px;
   height: 40px;
@@ -39,7 +36,6 @@
   color: #2b6ff3;
 }
 
-/* TEXT */
 .news-text h5 {
   font-size: 14px;
   font-weight: 600;
@@ -60,7 +56,6 @@
   cursor: pointer;
 }
 
-/* DOTS */
 .news-dots {
   display: flex;
   justify-content: center;
