@@ -1,6 +1,42 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Filters.css";
-import { BsCalendar, BsChevronDown, BsGlobe } from "react-icons/bs";
+import { BsCalendar, BsGlobe } from "react-icons/bs";
+
+const YEARS = [
+  "2018",
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026",
+];
+
+const INTAKES = [
+  "Jan 2024",
+  "May 2024",
+  "Sep 2024",
+  "Jan 2025",
+  "May 2025",
+  "Sep 2025",
+];
+
+const COUNTRIES = [
+  "India",
+  "United States",
+  "United Kingdom",
+  "Canada",
+  "Australia",
+  "New Zealand",
+  "Germany",
+  "France",
+  "Netherlands",
+  "Ireland",
+  "Singapore",
+  "UAE",
+];
 
 export default function Filters() {
   const [values, setValues] = useState({
@@ -11,17 +47,30 @@ export default function Filters() {
   });
 
   const [errors, setErrors] = useState({});
+  const [open, setOpen] = useState(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setOpen(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleChange = (key, value) => {
     setValues((prev) => ({ ...prev, [key]: value }));
     setErrors((prev) => ({ ...prev, [key]: "" }));
+    setOpen(null);
   };
 
   const validate = () => {
     const newErrors = {};
 
     if (!values.year) newErrors.year = "Year is required";
-    if (!values.dateCreated) newErrors.dateCreated = "Date Created is required";
+    if (!values.dateCreated) newErrors.dateCreated = "Date is required";
     if (!values.intake) newErrors.intake = "Intake is required";
     if (!values.country) newErrors.country = "Country is required";
 
@@ -31,22 +80,24 @@ export default function Filters() {
 
   const handleSubmit = () => {
     if (!validate()) return;
-
     console.log("Applied Filters:", values);
   };
 
   return (
-    <div className="filters-card">
+    <div className="filters-card" ref={wrapperRef}>
       <div className="filters-row">
-        <FilterInput
+        <Dropdown
           icon={<BsCalendar />}
           placeholder="Year"
           value={values.year}
           error={errors.year}
-          onChange={(v) => handleChange("year", v)}
+          open={open === "year"}
+          onToggle={() => setOpen(open === "year" ? null : "year")}
+          options={YEARS}
+          onSelect={(v) => handleChange("year", v)}
         />
 
-        <FilterInput
+        <DateInput
           icon={<BsCalendar />}
           placeholder="Date Created"
           value={values.dateCreated}
@@ -54,22 +105,28 @@ export default function Filters() {
           onChange={(v) => handleChange("dateCreated", v)}
         />
 
-        <FilterInput
+        <Dropdown
           icon={<BsCalendar />}
           placeholder="Select intake"
           value={values.intake}
           error={errors.intake}
-          onChange={(v) => handleChange("intake", v)}
+          open={open === "intake"}
+          onToggle={() => setOpen(open === "intake" ? null : "intake")}
+          options={INTAKES}
+          onSelect={(v) => handleChange("intake", v)}
         />
       </div>
 
       <div className="filters-row">
-        <FilterInput
+        <Dropdown
           icon={<BsGlobe />}
           placeholder="Countries"
           value={values.country}
           error={errors.country}
-          onChange={(v) => handleChange("country", v)}
+          open={open === "country"}
+          onToggle={() => setOpen(open === "country" ? null : "country")}
+          options={COUNTRIES}
+          onSelect={(v) => handleChange("country", v)}
         />
 
         <button className="apply-btn" onClick={handleSubmit}>
@@ -80,22 +137,57 @@ export default function Filters() {
   );
 }
 
-function FilterInput({ icon, placeholder, value, onChange, error }) {
+function Dropdown({
+  icon,
+  placeholder,
+  value,
+  options,
+  onSelect,
+  error,
+}) {
+  return (
+    <div className="filter-field dropdown">
+      <div
+        className={`filter-input dropdown-toggle ${error ? "error" : ""}`}
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <span className="left-icon">{icon}</span>
+        <input
+          readOnly
+          value={value}
+          placeholder={placeholder}
+        />
+      </div>
+
+      <ul className="dropdown-menu w-100 mt-2">
+        {options.map((opt) => (
+          <li key={opt}>
+            <button
+              type="button"
+              className="dropdown-item"
+              onClick={() => onSelect(opt)}
+            >
+              {opt}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function DateInput({ icon, value, onChange, error }) {
   return (
     <div className="filter-field">
       <div className={`filter-input ${error ? "error" : ""}`}>
         <span className="left-icon">{icon}</span>
         <input
-          type="text"
-          placeholder={placeholder}
+          type="date"
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />
-        <span className="right-icon">
-          <BsChevronDown />
-        </span>
       </div>
     </div>
   );
 }
-
